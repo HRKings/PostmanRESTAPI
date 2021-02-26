@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "0d9d317e-f5fb-451c-b2a0-3787fa6bf810",
+		"name": "Challenge Documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"jobName\",\r\n    \"requirements\" : [\r\n        \"requirement1\",\r\n        \"requirement2\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/jobs",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"jobs"
+					]
+				},
+				"description": "Add new job to the system, providing name and a requirements array"
+			},
+			"response": []
+		},
+		{
+			"name": "All jobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/jobs",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"jobs"
+					]
+				},
+				"description": "Gets all the jobs in the system"
+			},
+			"response": []
+		},
+		{
+			"name": "One job",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/jobs/developer",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"jobs",
+						"developer"
+					]
+				},
+				"description": "Gets only one job in the system, using the job id"
+			},
+			"response": []
+		},
+		{
+			"name": "Add upvote",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"userName\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/upvote/603938f5f3015c1e749e455a",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"upvote",
+						"603938f5f3015c1e749e455a"
+					]
+				},
+				"description": "Add upvote for a specific job, associated to a username"
+			},
+			"response": []
+		},
+		{
+			"name": "All Upvotes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/upvote",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"upvote"
+					]
+				},
+				"description": "Gets all upvotes in the system"
+			},
+			"response": []
+		},
+		{
+			"name": "User upvotes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/upvote/testUser",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"upvote",
+						"testUser"
+					]
+				},
+				"description": "Gets all the upvotes for a user, using the username in the route"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000"
+		}
+	]
+}
